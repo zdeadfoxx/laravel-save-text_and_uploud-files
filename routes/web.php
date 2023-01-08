@@ -3,14 +3,21 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\File\FileController;
 use App\Http\Controllers\Text\TextController;
+use PhpParser\Builder\Function_;
 
-route::get('/files',[FileController::class,'index'])->name('file.index');
+// route::get('/files',[FileController::class,'index'])->name('file.index');
 
-route::post('files/create',[FileController::class,'create'])->name('file.create');
+// route::post('files/create',[FileController::class,'create'])->name('file.create');
+
+route::controller(FileController::class)->group(Function() {
+    Route::get('files','index')->name('file.index');
+    Route::post('files/create','create')->name('file.create');
+    Route::get('files/download','download')->name('file.download');
+});
 
 
 
-route::get('/texts',[TextController::class,'index'])->name('Text.index');
+route::get('/',[TextController::class,'index'])->name('Text.index');
 
 Route::get('texts/create',[TextController::class,'create'])->name('Text.create');
 

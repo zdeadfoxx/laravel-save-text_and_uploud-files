@@ -5,6 +5,7 @@ namespace App\Http\Controllers\File;
 use App\Http\Controllers\Controller;
 use App\Models\File\File;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class FileController extends Controller
 {
@@ -18,7 +19,7 @@ class FileController extends Controller
     public function create(Request $request){
 
         $request ->validate([
-            'file'=>'required|mimes:csv,zip,txt,xlx,xls,pdf,png,jpg,torrent|max:10048'
+            'file'=>'required|mimes:csv,zip,7z,txt,xlx,xls,pdf,png,jpg,torrent|max:10048'
         ]);
 
         $fileModel = new File();
@@ -31,6 +32,8 @@ class FileController extends Controller
 
             $fileModel -> name = time(). '_'.$request->file->getClientOriginalName();
 
+
+
             $fileModel->file_path = '' .$filePath;
 
             $fileModel->save();
@@ -41,5 +44,19 @@ class FileController extends Controller
             ->with('file',$fileName);
         }
 
+    }
+
+    public function download(Request $request, $id){
+        $find_file = File::findOrFail($id);
+        $path = Storage::disk('local')->path($find_file);
+
+        return response()->download($path, basename($path));
+
+    }
+
+    public function show($id){
+
+        $find_text = File::findOrFail($id);
+        return redirect()->route('Text.index', ['name' => $find_text->id]);
     }
 }

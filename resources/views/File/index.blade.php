@@ -22,6 +22,10 @@
             <div class="mb-3">
                 <input type="file" name="file"  class="form-control" id="chooseFile">
             </div>
+            {{-- <div class="mb-3 progress">
+                <div class="bar"></div>
+                <div class="precent">0%</div>
+            </div> --}}
             <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
                 {{ __('Загрузить файл') }}
             </button>
@@ -30,11 +34,19 @@
     @foreach ($all_files as $file)
     <div class="files">
         <br>
-            <a class="link" href="Storage::url($file->file_path)">{{ $file->name }}</a>
+            <a class="link" href="Storage::url($file->file_path)" href="{{
+            Route('file.download') }}">{{ $file->name }}</a>
         <br>
+        <form action="" method="get">
+            <a class="link" href="Storage::url($file->file_path)">{{ $file->name }}</a>
+            <button>Скачать</button>
+        </form>
        <!--<img src="{{ Storage::url($file->file_path) }}" alt="">-->
-        <button>Скачать</button>
+
     </div>
     @endforeach
     </div>
+
+
+
 @endsection

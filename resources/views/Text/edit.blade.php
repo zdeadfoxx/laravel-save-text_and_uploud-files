@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
 
-    <form action="{{ route('Text.update', $find_text->id) }}" method="post">
+    <form action="{{ route('text.update', $find_text->id) }}" method="post">
 
         @csrf
         @method('put')
@@ -13,7 +13,7 @@
             <input type="text" class="form-control mb-3" id="text" name="text" value="{{ $find_text->text }}" required>
 
         </div>
-            <button type="submit" class="btn btn-primary mb-3"> {{ __('Обновить') }}</button>
+            <button type="submit" class="btn btn-primary mb-3  btn-dark"> {{ __('Обновить') }}</button>
     </form>
 
     <div class="card " style="width: 20rem;">
@@ -32,7 +32,7 @@
         </div>
 
         <div class="button__back">
-            <a  class="btn btn-primary  ms-3 mb-3" href="{{ route('Text.index') }}">{{ __('Назад') }}</a>
+            <a  class="btn btn-primary  ms-3 mb-3  btn-dark" href="{{ route('text.index') }}">{{ __('Назад') }}</a>
         </div>
 
     </div>

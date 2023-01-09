@@ -26,7 +26,7 @@
                 <div class="bar"></div>
                 <div class="precent">0%</div>
             </div> --}}
-            <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
+            <button type="submit" name="submit" class="btn btn-primary btn-block mt-4  btn-dark">
                 {{ __('Загрузить файл') }}
             </button>
 

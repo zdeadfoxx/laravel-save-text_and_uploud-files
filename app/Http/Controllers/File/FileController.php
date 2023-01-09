@@ -12,7 +12,7 @@ class FileController extends Controller
     public function index(){
         $all_files = file::all();
 
-        return view('File.index',compact('all_files'));
+        return view('file.index',compact('all_files'));
     }
 
 
@@ -57,6 +57,6 @@ class FileController extends Controller
     public function show($id){
 
         $find_text = File::findOrFail($id);
-        return redirect()->route('Text.index', ['name' => $find_text->id]);
+        return redirect()->route('text.index', ['name' => $find_text->id]);
     }
 }

@@ -11,12 +11,12 @@ class TextController extends Controller
     public function index(){
         $all_text = Text::all();
 
-        return view('Text.index',compact('all_text'));
+        return view('text.index',compact('all_text'));
     }
 
     public function create(){
 
-        return view('Text.index');
+        return view('text.index');
 
     }
 
@@ -28,14 +28,14 @@ class TextController extends Controller
 
         Text::create($request);
 
-        return redirect()->route('Text.index');
+        return redirect()->route('text.index');
     }
 
     public function show($id){
         $find_text = Text::findOrFail($id);
 
 
-        return view('Text.edit',compact('find_text'));
+        return view('text.edit',compact('find_text'));
 
     }
 
@@ -48,7 +48,7 @@ class TextController extends Controller
 
         $find_text->update($data);
 
-        return redirect()->route('Text.index', ['text' => $find_text->id]);
+        return redirect()->route('text.index', ['text' => $find_text->id]);
     }
 
     public function delete($id){
@@ -57,7 +57,7 @@ class TextController extends Controller
 
         $find_text->delete();
 
-        return redirect()->route('Text.index',$find_text->$id);
+        return redirect()->route('text.index',$find_text->$id);
     }
 
     public function return_deleted(){

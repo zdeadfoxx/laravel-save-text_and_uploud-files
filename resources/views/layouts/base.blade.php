@@ -36,9 +36,9 @@
 <body>
 @include('includes.header')
 
-<div class="d-flex flex-column min-vh-100 container" id="app">
+<main class="d-flex flex-column min-vh-100 container" id="app">
     @yield('content')
-</div>
+</main>
 
 
 @include('includes.footer')

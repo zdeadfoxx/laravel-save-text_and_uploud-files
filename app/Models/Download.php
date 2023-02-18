@@ -1,13 +1,14 @@
 <?php
 
-namespace App\Models\File;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class File extends Model
+class Download extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+   protected $guarded = [];
+   
 }

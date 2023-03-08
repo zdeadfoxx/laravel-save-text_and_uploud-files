@@ -33,6 +33,7 @@
         {{-- <a href="{{ route('file.download', $files->id) }}">{{ $files->name }}</a> --}}
      <a href="{{ route('file.download2', $files->id) }}">{{ $files->name }}</a>
 <br>
+
     </div>
     @endforeach
 

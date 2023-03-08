@@ -15,7 +15,7 @@ route::controller(FileController::class)->group(Function() {
     Route::get('files','index')->
     name('file.index');
 
-    Route::post('files/create','create1')->
+    Route::post('files/create','create')->
     name('file.create');
 
     Route::get('files/download/{id}','download')->

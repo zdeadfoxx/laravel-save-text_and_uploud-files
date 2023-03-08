@@ -30,6 +30,10 @@
             left: 50%;
             color: black;
         }
+        img{
+            width: 250px;
+            height: 250px;
+        }
     </style>
 
 </head>

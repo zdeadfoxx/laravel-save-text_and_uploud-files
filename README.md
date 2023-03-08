@@ -1,6 +1,6 @@
 Install (Установка)
 
-git clone git@github.com:dka-develop/dka-blog.git
+git clone https://github.com/zdeadfoxx/laravel-save-text_and_uploud-files.git
 
 composer install
 

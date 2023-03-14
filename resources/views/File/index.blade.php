@@ -1,14 +1,12 @@
 @extends('layouts.base')
 @section('content')
     <div class="container mt-5">
-        <form action="{{route('file.create')}}" method="post" enctype="multipart/form-data">
-          <h3 class="text-center mb-5">Загрузка файлов</h3>
+        <a href="#" onclick="location.reload(); return false;">
+            Обновить страницу
+        </a>
+        <form action="{{route('file.create')}}" method="post" enctype="multipart/form-data" class="dropzone mb-4 dz-message " id="dropzone" required >
             @csrf
-            @if ($message = Session::get('success'))
-            <div class="alert alert-success">
-                <strong>{{ $message }}</strong>
-            </div>
-          @endif
+            <div class="dz-message" data-dz-message><span class="display-6">Выберете файл для загрузки или перетащите его</span></div>
           @if (count($errors) > 0)
             <div class="alert alert-danger">
                 <ul>
@@ -18,27 +16,29 @@
                 </ul>
             </div>
           @endif
-
-            <div class="mb-3">
-                <input type="file" name="file"  class="form-control" id="chooseFile">
-            </div>
-            <button type="submit" name="submit" class="btn btn-primary btn-block mt-4  btn-dark">
-                {{ __('Загрузить файл') }}
-            </button>
-
         </form>
+            <p class="display-5">Файлы</p>
+        </div>
     @foreach ($all_files as $files)
-    <div class="files">
-<br>
-        {{-- <a href="{{ route('file.download', $files->id) }}">{{ $files->name }}</a> --}}
-     <a href="{{ route('file.download2', $files->id) }}">{{ $files->name }}</a>
-<br>
+    <div class="files mb-4">
+        <a href="{{ route('file.download2', $files->id) }}" class="blockquote">{{$files->name }}</a>
 
     </div>
     @endforeach
+    <div>{{ $all_files->links()}}</div>
+    <script type="text/javascript">
+        Dropzone.options.dropzone =
+                {
+                    dictDefaultMessage: "Выберете файл для загрузки или перетащите его",
+                    maxFilesize: 1000,
+                    maxFiles: 10,
+                    acceptedFiles: "",
+                    addRemoveLinks: true,
 
-    </div>
-
-
+                };
+                setTimeout(function(){
+	                location.reload();
+                }, 300000);
+    </script>
 
 @endsection

@@ -57,12 +57,12 @@
                                         {{ __('Войти') }}
                                     </button>
                                  </div>
-                                    <div class="col-md-auto">
+                                    {{-- <div class="col-md-auto">
 
                                        <a class="btn btn-primary btn-dark" href="{{ Route('register') }}">{{ __('Зарегистрироваться') }}</a>
 
-                                    </div>
-                                    <div class="col col-lg-2">
+                                    </div> --}}
+                                    <div class="col col-lg-3">
                                         @if (Route::has('password.request'))
                                             <a class="btn btn-link col-sm" href="{{ route('password.request') }}"> {{ __('Забыли пароль?') }} </a>
                                         @endif

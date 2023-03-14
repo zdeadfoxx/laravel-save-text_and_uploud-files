@@ -20,6 +20,10 @@
     <!--Styles-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" integrity="sha512-XWTTruHZEYJsxV3W/lSXG1n3Q39YIWOstqvmFsdNEEQfHoZ6vm6E9GK2OrF6DSJSpIbRbi+Nn0WDPID9O7xB2Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.0/min/dropzone.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.0/dropzone.js"></script>
+
+
     <style>
         .bar{
             background: #00ff00;
@@ -33,6 +37,13 @@
         img{
             width: 250px;
             height: 250px;
+        }
+        a{
+            text-decoration: none;
+        }
+        .files:hover{
+            color: #000000;
+            opacity: 0.5;
         }
     </style>
 

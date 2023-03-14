@@ -11,16 +11,15 @@
         <button type="submit" class="btn btn-primary mb-5  btn-dark">
             {{ __('Сохранить') }}</button>
     </form>
-
         @foreach ($all_text as $text )
       <!--Сделать в базе элемент, который будет отмечать, что добавлена ссылка и под ней для перихода будет кнопка-->
       <!--Изменине ссылок может быть вынесено на первую страницу, чтобы была система SPA-->
         <div class="card mt-3">
             <div class="card-body">
                 <a class="" href="{{ route('text.show',$text->id) }}">{{ $text->text }} </a>
-                <form action="{{ $text->text }}">
+                {{-- <form action="{{ $text->text }}">
                     <button>Перейти</button>
-                </form>
+                </form> --}}
                 <div class="button__delete mt-4 d-flex">
                     <form action="{{ route('text.delete',$text->id) }}" method="post">
                     @csrf
@@ -33,6 +32,7 @@
           </div>
 
         @endforeach
+        <div>{{ $all_text->links()}}</div>
 
 </div>
 

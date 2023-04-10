@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Storage;
 class  FileController extends Controller
 {
     public function index(){
-        $all_files = file::paginate(7);
+        $all_files = file::paginate(16);
         return view('file.index',compact('all_files'));
     }
 
@@ -52,6 +52,12 @@ class  FileController extends Controller
            return response()->download($path);
         }
 
+        public function tooltip($id)
+        {
+           $files = DB::table('files')->where('id',$id)->first();
+           $path = Storage::path("public/$files->file_path");
+           return response()->download($path);
+        }
     }
 
 

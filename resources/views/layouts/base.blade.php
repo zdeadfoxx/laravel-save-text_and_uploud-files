@@ -22,40 +22,42 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.0/min/dropzone.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.0/dropzone.js"></script>
-
-
     <style>
-        .bar{
-            background: #00ff00;
-        }
-
-        .precent{
-            position: absolute;
-            left: 50%;
-            color: black;
+        body{
+            font-size: 18px;
         }
         img{
             width: 250px;
             height: 250px;
         }
         a{
+
             text-decoration: none;
+
         }
         .files:hover{
             color: #000000;
             opacity: 0.5;
         }
-    </style>
+        .btn1{
+            max-width: 100px;
+            text-align: center;
 
+        }
+        .dd{
+            display: flex;
+            justify-content: space-between;
+        }
+        input{
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
 @include('includes.header')
-
 <main class="d-flex flex-column min-vh-100 container" id="app">
     @yield('content')
 </main>
-
-
 @include('includes.footer')
 </body>
 </html>

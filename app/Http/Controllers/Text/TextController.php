@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class TextController extends Controller
 {
     public function index(){
-        $all_text = Text::paginate(7);
+        $all_text = Text::paginate(12);
         return view('text.index',compact('all_text'));
     }
 

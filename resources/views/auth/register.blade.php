@@ -61,9 +61,9 @@
                             </div>
                         </div>
 
-                            <div class="row justify-content-md-center">
+                            <div class="row  dd">
                                 <div class="col col-md-auto">
-                                <a class="btn btn-primary btn-dark" href="{{ Route('login') }}"> {{ __('Войти') }}</a>
+
                                 </div>
                                    <div class="col-lg-1">
 
@@ -72,6 +72,7 @@
                                        </button>
 
                                    </div>
+                                   <a class=" btn1 btn  btn-dark" href="{{ Route('login') }}"> {{ __('Войти') }}</a>
                                </div>
 
 

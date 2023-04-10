@@ -10,4 +10,5 @@ class File extends Model
     use HasFactory;
 
     protected $guarded = [];
+    protected $table = 'files';
 }

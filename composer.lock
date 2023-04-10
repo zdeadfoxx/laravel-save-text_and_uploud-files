@@ -235,7 +235,7 @@
                 "shasum": ""
             },
             "require": {
-                "php": "^7.2 || ^8.0"
+                "php": "^7.2 || ^8.1.1"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^10",

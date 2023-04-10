@@ -29,6 +29,7 @@ route::controller(FileController::class)->group(Function() {
 
 
 Route::controller(TextController::class)->group(function () {
+
     route::get('/texts',[TextController::class,'index'])->name('text.index');
 
     Route::get('texts/create',[TextController::class,'create'])->name('text.create');

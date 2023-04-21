@@ -14,7 +14,7 @@
         }
     ],
     "env": {
-        "APP_NAME": "Laravel",
+        "APP_NAME": "Корпоративное хранилище",
         "APP_ENV": "production",
         "APP_DEBUG": "false",
         "APP_URL": "https://laravel.app",

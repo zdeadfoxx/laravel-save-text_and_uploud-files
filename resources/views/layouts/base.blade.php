@@ -51,6 +51,16 @@
         input{
             font-size: 20px;
         }
+        .navbar{
+            display: flex;
+            justify-content: space-between;
+        }
+        .hover{
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            text-align: end;
+        }
     </style>
 </head>
 <body>

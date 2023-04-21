@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Text\Text;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $all_text = Text::paginate(12);
+        return view('text.index',compact('all_text'));
     }
 }

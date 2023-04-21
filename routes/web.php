@@ -7,7 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Text\TextController;
 use Illuminate\Support\Facades\Auth;
 
-Route::redirect('/', '/texts');
+Route::redirect('/', '/home');
 
 Auth::routes();
 

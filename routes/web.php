@@ -10,40 +10,43 @@ use Illuminate\Support\Facades\Auth;
 Route::redirect('/', '/home');
 
 Auth::routes();
+Route::middleware(['auth'])->group(function () {
 
-route::controller(FileController::class)->group(Function() {
-    Route::get('files','index')->
-    name('file.index');
+    route::controller(FileController::class)->group(Function() {
+        Route::get('files','index')->
+        name('file.index');
 
-    Route::post('files/create','create')->
-    name('file.create');
+        Route::post('files/create','create')->
+        name('file.create');
 
-    Route::get('files/download/{id}','download')->
-    name('file.download');
-    Route::get('files/download1/{id}','download1')->
-    name('file.download1');
-    Route::get('files/download2/{id}','download2')->
-    name('file.download2');
+        Route::get('files/download/{id}','download')->
+        name('file.download');
+        Route::get('files/download1/{id}','download1')->
+        name('file.download1');
+        Route::get('files/download2/{id}','download2')->
+        name('file.download2');
 
+    });
+
+
+    Route::controller(TextController::class)->group(function () {
+
+        route::get('/texts',[TextController::class,'index'])->name('text.index');
+
+        Route::get('texts/create',[TextController::class,'create'])->name('text.create');
+
+        Route::post('texts/store',[TextController::class,'store'])->name('text.store');
+
+        Route::get('texts/{text}',[TextController::class,'show'])->name('text.show');
+
+        Route::get('texts/{texts}/edit',[TextController::class,'edit'])->name('text.edit');
+
+        Route::put('texts/{texts}',[TextController::class,'update'])->name('text.update');
+
+        Route::delete('texts/{text}',[TextController::class,'delete'])->name('text.delete');
+    });
 });
 
-
-Route::controller(TextController::class)->group(function () {
-
-    route::get('/texts',[TextController::class,'index'])->name('text.index');
-
-    Route::get('texts/create',[TextController::class,'create'])->name('text.create');
-
-    Route::post('texts/store',[TextController::class,'store'])->name('text.store');
-
-    Route::get('texts/{text}',[TextController::class,'show'])->name('text.show');
-
-    Route::get('texts/{texts}/edit',[TextController::class,'edit'])->name('text.edit');
-
-    Route::put('texts/{texts}',[TextController::class,'update'])->name('text.update');
-
-    Route::delete('texts/{text}',[TextController::class,'delete'])->name('text.delete');
-});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

@@ -11,6 +11,6 @@ class Text extends Model
     use HasFactory;
 
     protected $table = 'texts';
-    
-    protected  $guarded =[];
+
+    protected  $guarded = [];
 }

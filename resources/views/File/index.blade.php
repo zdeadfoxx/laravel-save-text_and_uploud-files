@@ -36,7 +36,7 @@
     <script type="text/javascript">
         Dropzone.options.dropzone =
                 {
-                    dictDefaultMessage: "Выберете файл для загрузки или перетащите его",
+                    dictDefaultMessage: "Выберите файл для загрузки или перетащите его",
                     maxFilesize: 1000,
                     maxFiles: 10,
                     acceptedFiles: "",

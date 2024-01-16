@@ -71,7 +71,7 @@
 
 
 
-
+                                <a class=" btn1 btn  btn-dark" href="{{ Route('register') }}"> {{ __('Регистрация') }}</a>
                         {{-- <div class="row mb-0">
                             <div class=" offset-md-4">
                                 <button type="submit" class="btn btn-primary">
